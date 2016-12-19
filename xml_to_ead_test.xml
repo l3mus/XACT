@@ -1,0 +1,296 @@
+
+<!DOCTYPE ead
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<ead xmlns="urn:isbn:1-931666-22-9"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     audience="external"
+     xsi:schemaLocation="urn:isbn:1-931666-22-9 http://www.loc.gov/ead/ead.xsd"><!--EAD HEADER-->
+   <eadheader countryencoding="iso3166-1"
+              dateencoding="iso8601"
+              findaidstatus="under_revision"
+              langencoding="iso639-2b"
+              repositoryencoding="iso15511">
+      <eadid>US::NvLN::EADTEST002</eadid>
+      <filedesc>
+         <titlestmt>
+            <titleproper>Guide to the Collection title</titleproper>
+            <titleproper type="filing">Guide to the Collection title</titleproper>
+         </titlestmt>
+      </filedesc>
+   </eadheader>
+   <archdesc level="collection">
+      <did>
+         <unitid>EAD-TEST-002</unitid>
+         <unittitle>Collection title</unittitle>
+         <langmaterial>
+            <language langcode="eng">ENGLISH</language>
+         </langmaterial>
+         <physdesc altrender="whole">
+            <extent altrender="materialtype spaceoccupied">1 linear_feet</extent>
+            <extent altrender="carrier">1 box</extent>
+         </physdesc>
+         <unitdate type="inclusive" normal="2000/2005">2000-2005</unitdate>
+         <abstract>Abstract test</abstract>
+      </did>
+      <scopecontent audience="external">
+         <head>Scope and Contents Note</head>
+         <p>S and C test</p>
+      </scopecontent>
+      <userestrict audience="external">
+         <head>Publication Rights</head>
+         <p>Materials in this collection may be protected by copyrights and other rights.  See <extref xlink:actuate="onRequest" xlink:href="http://www.library.unlv.edu/speccol/research_and_services/reproductions" xlink:show="new" xlink:title="Reproductions and Use"> Reproductions and Use</extref> on the UNLV Special Collections website for more information about reproductions and permissions to publish.</p>
+      </userestrict>
+      <accessrestrict audience="external">
+         <head>Access Note</head>
+         <p>Collection is open for research.</p>
+      </accessrestrict>
+      <prefercite audience="external">
+         <head>Preferred Citation</head>
+         <p>Citation test</p>
+      </prefercite>
+      <arrangement audience="external">
+         <head>Arrangement Note</head>
+         <p>Arrangement test</p>
+      </arrangement>
+      <acqinfo audience="external">
+         <head>Acquisition Note</head>
+         <p>Acq test</p>
+      </acqinfo>
+      <processinfo audience="external">
+         <head>Processing Note</head>
+         <p>Process test</p>
+      </processinfo>
+      <bioghist audience="external">
+         <head>Biographical Note</head>
+         <p>Bio test</p>
+      </bioghist>
+      <relatedmaterial audience="external">
+         <head>Related Materials</head>
+         <p>Related test</p>
+      </relatedmaterial>
+      <dsc>
+         <c01 level="series">
+            <did>
+               <unittitle>Series One Title</unittitle>
+            </did>
+            <scopecontent audience="external">
+               <head>Scope and Contents Note</head>
+               <p>S and C test</p>
+            </scopecontent>
+            <prefercite audience="external">
+               <head>Preferred Citation</head>
+               <p>Citation test</p>
+            </prefercite>
+            <arrangement audience="external">
+               <head>Arrangement Note</head>
+               <p>Arrangement test</p>
+            </arrangement>
+            <acqinfo audience="external">
+               <head>Acquisition Note</head>
+               <p>Acq test</p>
+            </acqinfo>
+            <processinfo audience="external">
+               <head>Processing Note</head>
+               <p>Process test</p>
+            </processinfo>
+            <bioghist audience="external">
+               <head>Biographical Note</head>
+               <p>Bio test</p>
+            </bioghist>
+            <relatedmaterial audience="external">
+               <head>Related Materials</head>
+               <p>Related test</p>
+            </relatedmaterial>
+            <c02 level="subseries">
+               <did>
+                  <unittitle>Subseries One Title</unittitle>
+               </did>
+               <c03 level="file">
+                  <did>
+                     <unittitle>File One Title</unittitle>
+                     <unitdate type="inclusive" normal="2000">2000</unitdate>
+                     <container id="parent-id0" label="mixed_materials" type="box">01</container>
+                     <container parent="parent-id0" type="folder">01</container>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle>File Two Title</unittitle>
+                     <unitdate type="inclusive" normal="2001-2003">2001-2003</unitdate>
+                     <container id="parent-id1" label="mixed_materials" type="box">01</container>
+                     <container parent="parent-id1" type="folder">02</container>
+                  </did>
+               </c03>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle>File One Title</unittitle>
+                  <unitdate type="inclusive" normal="2000">2000</unitdate>
+                  <container id="parent-id2" label="mixed_materials" type="box">01</container>
+                  <container parent="parent-id2" type="folder">01</container>
+               </did>
+            </c02>
+         </c01>
+         <c01 level="series">
+            <did>
+               <unittitle>Series Two Title</unittitle>
+            </did>
+            <scopecontent audience="external">
+               <head>Scope and Contents Note</head>
+               <p>S and C test</p>
+            </scopecontent>
+            <prefercite audience="external">
+               <head>Preferred Citation</head>
+               <p>Citation test</p>
+            </prefercite>
+            <arrangement audience="external">
+               <head>Arrangement Note</head>
+               <p>Arrangement test</p>
+            </arrangement>
+            <acqinfo audience="external">
+               <head>Acquisition Note</head>
+               <p>Acq test</p>
+            </acqinfo>
+            <processinfo audience="external">
+               <head>Processing Note</head>
+               <p>Process test</p>
+            </processinfo>
+            <bioghist audience="external">
+               <head>Biographical Note</head>
+               <p>Bio test</p>
+            </bioghist>
+            <relatedmaterial audience="external">
+               <head>Related Materials</head>
+               <p>Related test</p>
+            </relatedmaterial>
+            <c02 level="subseries">
+               <did>
+                  <unittitle>Subseries One Title</unittitle>
+               </did>
+               <scopecontent audience="external">
+                  <head>Scope and Contents Note</head>
+                  <p>S and C test</p>
+               </scopecontent>
+               <prefercite audience="external">
+                  <head>Preferred Citation</head>
+                  <p>Citation test</p>
+               </prefercite>
+               <arrangement audience="external">
+                  <head>Arrangement Note</head>
+                  <p>Arrangement test</p>
+               </arrangement>
+               <acqinfo audience="external">
+                  <head>Acquisition Note</head>
+                  <p>Acq test</p>
+               </acqinfo>
+               <processinfo audience="external">
+                  <head>Processing Note</head>
+                  <p>Process test</p>
+               </processinfo>
+               <bioghist audience="external">
+                  <head>Biographical Note</head>
+                  <p>Bio test</p>
+               </bioghist>
+               <relatedmaterial audience="external">
+                  <head>Related Materials</head>
+                  <p>Related test</p>
+               </relatedmaterial>
+               <c03 level="file">
+                  <did>
+                     <unittitle>File One Title</unittitle>
+                     <unitdate type="inclusive" normal="2004">2004</unitdate>
+                     <physdesc altrender="whole">
+                        <extent altrender="materialtype spaceoccupied">5 cubic_feet</extent>
+                        <extent altrender="carrier">5 rolls</extent>
+                     </physdesc>
+                     <container id="parent-id3" label="graphic_materials" type="roll">02</container>
+                  </did>
+               </c03>
+               <c03 level="file">
+                  <did>
+                     <unittitle>File Two Title</unittitle>
+                     <unitdate type="inclusive" normal="2005">2005</unitdate>
+                     <container id="parent-id4" label="graphic_materials" type="roll">02</container>
+                  </did>
+               </c03>
+            </c02>
+            <c02 level="subseries">
+               <did>
+                  <unittitle>Subseries Two Title</unittitle>
+               </did>
+               <scopecontent audience="external">
+                  <head>Scope and Contents Note</head>
+                  <p>S and C test</p>
+               </scopecontent>
+               <prefercite audience="external">
+                  <head>Preferred Citation</head>
+                  <p>Citation test</p>
+               </prefercite>
+               <arrangement audience="external">
+                  <head>Arrangement Note</head>
+                  <p>Arrangement test</p>
+               </arrangement>
+               <acqinfo audience="external">
+                  <head>Acquisition Note</head>
+                  <p>Acq test</p>
+               </acqinfo>
+               <processinfo audience="external">
+                  <head>Processing Note</head>
+                  <p>Process test</p>
+               </processinfo>
+               <bioghist audience="external">
+                  <head>Biographical Note</head>
+                  <p>Bio test</p>
+               </bioghist>
+               <relatedmaterial audience="external">
+                  <head>Related Materials</head>
+                  <p>Related test</p>
+               </relatedmaterial>
+               <c03 level="file">
+                  <did>
+                     <unittitle>File One Title</unittitle>
+                     <unitdate type="single" normal="2004 June 30">2004 June 30</unitdate>
+                     <container id="parent-id5" label="mixed_materials" type="oversized_box">03</container>
+                  </did>
+               </c03>
+            </c02>
+            <c02 level="file">
+               <did>
+                  <unittitle>File Two Title</unittitle>
+                  <unitdate type="inclusive" normal="2005">2005</unitdate>
+                  <container id="parent-id6" label="mixed_materials" type="oversized_box">03</container>
+               </did>
+               <scopecontent audience="external">
+                  <head>Scope and Contents Note</head>
+                  <p>S and C test</p>
+               </scopecontent>
+               <prefercite audience="external">
+                  <head>Preferred Citation</head>
+                  <p>Citation test</p>
+               </prefercite>
+               <arrangement audience="external">
+                  <head>Arrangement Note</head>
+                  <p>Arrangement test</p>
+               </arrangement>
+               <acqinfo audience="external">
+                  <head>Acquisition Note</head>
+                  <p>Acq test</p>
+               </acqinfo>
+               <processinfo audience="external">
+                  <head>Processing Note</head>
+                  <p>Process test</p>
+               </processinfo>
+               <bioghist audience="external">
+                  <head>Biographical Note</head>
+                  <p>Bio test</p>
+               </bioghist>
+               <relatedmaterial audience="external">
+                  <head>Related Materials</head>
+                  <p>Related test</p>
+               </relatedmaterial>
+            </c02>
+         </c01>
+      </dsc>
+   </archdesc>
+</ead>
