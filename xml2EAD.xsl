@@ -4,6 +4,7 @@
 <xsl:transform
     xmlns="urn:isbn:1-931666-22-9"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:tns="http://tnsnamespace"
     xmlns:saxon="http://saxon.sf.net/"
     extension-element-prefixes="saxon"
     version="2.0" >
@@ -201,87 +202,53 @@
     </xsl:template>
     
     <xsl:template name="description">
-        <xsl:param name="levels" select="distinct-values(//row/association_id)"/>
-        <xsl:param name="rows" select="//row[collection_level != 'collection']"/>
+        <xsl:param name="series" select="//row[collection_level = 'series']"/>
+        <xsl:param name="rows" select="//row[collection_level != 'collection' and collection_level != 'series']"/>
         
-        <xsl:for-each select="$levels">
-            <xsl:variable name="level" select="."/>
-            <xsl:choose>
-            <!--If a association_id is 0 there is no associated series -->
-                <xsl:when test="$level = '0'">
-                    <xsl:apply-templates select="$rows[association_id = $level and collection_level != 'series']" mode="file">
-                        <xsl:with-param name="level" select="$level"></xsl:with-param>
-                        <xsl:with-param name="component_level">c01</xsl:with-param>
-                    </xsl:apply-templates>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:apply-templates select="$rows[contains(association_id, $level)]" mode="series">
-                        <xsl:with-param name="level" select="$level"/>
-                    </xsl:apply-templates>
-                </xsl:otherwise>
-              </xsl:choose>
-      </xsl:for-each>
-     
-    </xsl:template>
-    
-    
-    <xsl:template match="row" mode="series">
-        <xsl:param name="level"/>
-        <xsl:if test="collection_level = 'series'">
+        <xsl:for-each select="$series">
             <c01>
                 <xsl:attribute name="level"><xsl:value-of select="collection_level"/></xsl:attribute>
                 <xsl:call-template name="component">
                 </xsl:call-template>   
-                <saxon:assign name="componentCounter" select="0"/>
-                <xsl:apply-templates select="//row[starts-with(association_id, $level) and collection_level != 'series']" mode="subseries">
-                    <xsl:with-param name="level" select="$level"></xsl:with-param>
-                    <xsl:with-param name="component_level">c02</xsl:with-param>
-                </xsl:apply-templates>
-            </c01>        
-        </xsl:if>
+                
+                <xsl:for-each select="tokenize(subseries_reference, ',')">
+                   <xsl:variable name="subseries_reference" select="."/>
+                   <xsl:apply-templates select="$rows[association_id = normalize-space($subseries_reference) and collection_level = 'subseries']" mode="subseries">
+                   </xsl:apply-templates>
+                </xsl:for-each> 
+                <xsl:for-each select="tokenize(files_reference, ',')">
+                    <xsl:variable name="files_reference" select="."/>
+                    <xsl:apply-templates select="$rows[association_id = normalize-space($files_reference) and collection_level = 'file']" mode="files">
+                    </xsl:apply-templates>
+                </xsl:for-each> 
+                
+            </c01>     
+      </xsl:for-each>
+     
     </xsl:template>
     
     <xsl:template match="row" mode="subseries">
-        <xsl:param name="level"/>
-        <xsl:param name="current_id" select="association_id"/>
-        <xsl:param name="current_title" select="title"/>
-        <xsl:param name="current_position" select="position()"/>
-        <xsl:param name="component_level"/>
-        
-        <xsl:choose>
-            <xsl:when test="association_id eq $level">
-                <xsl:element name="{$component_level}">
-                    <xsl:attribute name="level"><xsl:value-of select="collection_level"/></xsl:attribute>
-                    <xsl:call-template name="component">
-                    </xsl:call-template>
-                </xsl:element>
-            </xsl:when>
-            <xsl:when  test="$current_id  &gt; $level">
-                <xsl:if test="collection_level = 'subseries'">
-                   <xsl:element name="{$component_level}">
-                        <xsl:attribute name="level"><xsl:value-of select="collection_level"/></xsl:attribute>
-                        <xsl:call-template name="component">
-                        </xsl:call-template>
-                       <xsl:apply-templates select="//row[association_id = $current_id and collection_level != 'series' and title != $current_title]" mode="subseries">
-                            <xsl:with-param name="level" select="$current_id"></xsl:with-param>
-                            <xsl:with-param name="component_level">c03</xsl:with-param>
-                        </xsl:apply-templates>                      
-                   </xsl:element>
-                </xsl:if>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:element name="{$component_level}">
-                    <xsl:attribute name="level"><xsl:value-of select="collection_level"/></xsl:attribute>
-                    <xsl:call-template name="component">
-                    </xsl:call-template>
-                </xsl:element>
-            </xsl:otherwise>
-        </xsl:choose>
+        <xsl:param name="rows" select="//row[collection_level != 'collection' and collection_level != 'series']"/>
+        <c>
+            <xsl:attribute name="level"><xsl:value-of select="collection_level"/></xsl:attribute>
+            <xsl:call-template name="component">
+            </xsl:call-template>   
+            <xsl:for-each select="tokenize(subseries_reference, ',')">
+                <xsl:variable name="subseries_reference" select="."/>
+                <xsl:apply-templates select="$rows[association_id = normalize-space($subseries_reference) and collection_level = 'subseries']" mode="subseries">
+                </xsl:apply-templates>
+            </xsl:for-each> 
+            <xsl:for-each select="tokenize(files_reference, ',')">
+                <xsl:variable name="files_reference" select="."/>
+                <xsl:apply-templates select="$rows[association_id = normalize-space($files_reference) and collection_level = 'file']" mode="files">
+                </xsl:apply-templates>
+            </xsl:for-each> 
+        </c>     
     </xsl:template>
     
-    <xsl:template match="row" mode="file">    
+    <xsl:template match="row" mode="files">    
         <xsl:param name="component_level"/>
-        <xsl:element name="{$component_level}">
+        <xsl:element name="c">
            <xsl:attribute name="level"><xsl:value-of select="collection_level"/></xsl:attribute>
            <xsl:call-template name="component">
            </xsl:call-template>
