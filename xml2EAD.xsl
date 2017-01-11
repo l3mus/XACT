@@ -135,7 +135,7 @@
             <scopecontent>
                 <xsl:attribute name="audience"><xsl:text>external</xsl:text></xsl:attribute>
                 <head>Scope and Contents Note</head>
-                <p><xsl:value-of select="$scopecontent" disable-output-escaping="yes"/></p>
+                <p><xsl:value-of select="$scopecontent"  disable-output-escaping="yes"/></p>
             </scopecontent>
         </xsl:if>
         

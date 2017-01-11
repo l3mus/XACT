@@ -32,7 +32,7 @@
             <extent altrender="carrier">15 boxes</extent>
          </physdesc>
          <unitdate type="inclusive" normal="1900/1999">1900-1999</unitdate>
-         <abstract>Abstract test.Paragraph test.</abstract>
+         <abstract><p>Abstract test.</p><p>Paragraph test.</p></abstract>
       </did>
       <scopecontent audience="external">
          <head>Scope and Contents Note</head>
