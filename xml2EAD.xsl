@@ -103,6 +103,7 @@
                 </xsl:if>
             </did>
             <xsl:call-template name="notes">
+                <xsl:with-param name="generalnote" select="generalnote"/>
                 <xsl:with-param name="scopecontent" select="scopecontent"/>
                 <xsl:with-param name="accessrestrict" select="$accessrestrict_def"/>
                 <xsl:with-param name="userestrict" select="$userestrict_def"/>
@@ -122,6 +123,7 @@
     <!-- end arcdesc template -->
     
     <xsl:template name="notes">
+        <xsl:param name="generalnote" select="null"/>
         <xsl:param name="scopecontent" select="null"/>
         <xsl:param name="userestrict" select="null"/>
         <xsl:param name="accessrestrict" select="null"/>
@@ -131,6 +133,13 @@
         <xsl:param name="processinfo" select="null"/>
         <xsl:param name="bioghist" select="null"/>
         <xsl:param name="relatedmaterial" select="null"/>
+        <xsl:if test="$generalnote != ''">
+            <odd>
+                <xsl:attribute name="audience"><xsl:text>external</xsl:text></xsl:attribute>
+                <head>General</head>
+                <p><xsl:value-of select="$generalnote"  disable-output-escaping="yes"/></p>
+            </odd>
+        </xsl:if>
         <xsl:if test="$scopecontent != ''">
             <scopecontent>
                 <xsl:attribute name="audience"><xsl:text>external</xsl:text></xsl:attribute>
@@ -247,11 +256,17 @@
     </xsl:template>
     
     <xsl:template match="row" mode="files">    
+        <xsl:param name="rows" select="//row[collection_level = 'file']"/>
         <xsl:param name="component_level"/>
         <xsl:element name="c">
-           <xsl:attribute name="level"><xsl:value-of select="collection_level"/></xsl:attribute>
+            <xsl:attribute name="level"><xsl:value-of select="collection_level"/></xsl:attribute>
            <xsl:call-template name="component">
            </xsl:call-template>
+            <xsl:for-each select="tokenize(files_reference, ',')">
+                <xsl:variable name="files_reference" select="."/>
+                <xsl:apply-templates select="$rows[association_id = normalize-space($files_reference) and collection_level = 'file']" mode="files">
+                </xsl:apply-templates>
+            </xsl:for-each> 
         </xsl:element>
     </xsl:template>
     
@@ -281,6 +296,7 @@
                 
         </did>
         <xsl:call-template name="notes">
+            <xsl:with-param name="generalnote" select="generalnote"/>
             <xsl:with-param name="scopecontent" select="scopecontent"/>
             <xsl:with-param name="prefercite" select="prefercite"/>
             <xsl:with-param name="arrangement" select="arrangement"/>
