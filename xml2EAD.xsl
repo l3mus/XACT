@@ -234,7 +234,7 @@
             </c01>     
       </xsl:for-each>
       <xsl:for-each select="$files">
-          <xsl:if test="not(association_id)">
+          <xsl:if test="not(association_id) or association_id = ''">
               <c01>
                   <xsl:attribute name="level"><xsl:value-of select="collection_level"/></xsl:attribute>
                   <xsl:call-template name="component">
