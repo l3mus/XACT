@@ -212,6 +212,7 @@
     
     <xsl:template name="description">
         <xsl:param name="series" select="//row[collection_level = 'series']"/>
+        <xsl:param name="files" select="//row[collection_level = 'file']"/>
         <xsl:param name="rows" select="//row[collection_level != 'collection' and collection_level != 'series']"/>
         
         <xsl:for-each select="$series">
@@ -230,9 +231,22 @@
                     <xsl:apply-templates select="$rows[association_id = normalize-space($files_reference) and collection_level = 'file']" mode="files">
                     </xsl:apply-templates>
                 </xsl:for-each> 
-                
             </c01>     
       </xsl:for-each>
+      <xsl:for-each select="$files">
+          <xsl:if test="not(association_id)">
+              <c01>
+                  <xsl:attribute name="level"><xsl:value-of select="collection_level"/></xsl:attribute>
+                  <xsl:call-template name="component">
+                  </xsl:call-template>   
+                  <xsl:for-each select="tokenize(files_reference, ',')">
+                      <xsl:variable name="files_reference" select="."/>
+                      <xsl:apply-templates select="$rows[association_id = normalize-space($files_reference) and collection_level = 'file']" mode="files">
+                      </xsl:apply-templates>
+                  </xsl:for-each> 
+              </c01>    
+          </xsl:if>
+      </xsl:for-each> 
      
     </xsl:template>
     
