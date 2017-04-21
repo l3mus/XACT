@@ -87,6 +87,14 @@
                <head>Scope and Contents Note</head>
                <p>S and C test</p>
             </scopecontent>
+            <userestrict audience="external">
+               <head>Publication Rights</head>
+               <p>TEST Restrict</p>
+            </userestrict>
+            <accessrestrict audience="external">
+               <head>Access Note</head>
+               <p>TEST ACCESS</p>
+            </accessrestrict>
             <prefercite audience="external">
                <head>Preferred Citation</head>
                <p>Citation test</p>
@@ -115,6 +123,14 @@
                <did>
                   <unittitle>Subseries One Title</unittitle>
                </did>
+               <userestrict audience="external">
+                  <head>Publication Rights</head>
+                  <p>Materials in this collection may be protected by copyrights and other rights.  See <extref xlink:actuate="onRequest" xlink:href="http://www.library.unlv.edu/speccol/research_and_services/reproductions" xlink:show="new" xlink:title="Reproductions and Use"> Reproductions and Use</extref> on the UNLV Special Collections website for more information about reproductions and permissions to publish.</p>
+               </userestrict>
+               <accessrestrict audience="external">
+                  <head>Access Note</head>
+                  <p>Collection is open for research.</p>
+               </accessrestrict>
                <c level="file">
                   <did>
                      <unittitle>File One A Title</unittitle>
@@ -122,6 +138,14 @@
                      <container id="parent-id0" label="mixed_materials" type="box">01</container>
                      <container parent="parent-id0" type="folder">01</container>
                   </did>
+                  <userestrict audience="external">
+                     <head>Publication Rights</head>
+                     <p>Materials in this collection may be protected by copyrights and other rights.  See <extref xlink:actuate="onRequest" xlink:href="http://www.library.unlv.edu/speccol/research_and_services/reproductions" xlink:show="new" xlink:title="Reproductions and Use"> Reproductions and Use</extref> on the UNLV Special Collections website for more information about reproductions and permissions to publish.</p>
+                  </userestrict>
+                  <accessrestrict audience="external">
+                     <head>Access Note</head>
+                     <p>Collection is open for research.</p>
+                  </accessrestrict>
                </c>
                <c level="file">
                   <did>
@@ -130,6 +154,14 @@
                      <container id="parent-id1" label="mixed_materials" type="box">01</container>
                      <container parent="parent-id1" type="folder">01</container>
                   </did>
+                  <userestrict audience="external">
+                     <head>Publication Rights</head>
+                     <p>Materials in this collection may be protected by copyrights and other rights.  See <extref xlink:actuate="onRequest" xlink:href="http://www.library.unlv.edu/speccol/research_and_services/reproductions" xlink:show="new" xlink:title="Reproductions and Use"> Reproductions and Use</extref> on the UNLV Special Collections website for more information about reproductions and permissions to publish.</p>
+                  </userestrict>
+                  <accessrestrict audience="external">
+                     <head>Access Note</head>
+                     <p>Collection is open for research.</p>
+                  </accessrestrict>
                </c>
                <c level="file">
                   <did>
@@ -138,6 +170,14 @@
                      <container id="parent-id2" label="mixed_materials" type="box">01</container>
                      <container parent="parent-id2" type="folder">02</container>
                   </did>
+                  <userestrict audience="external">
+                     <head>Publication Rights</head>
+                     <p>TEST Restrict</p>
+                  </userestrict>
+                  <accessrestrict audience="external">
+                     <head>Access Note</head>
+                     <p>Collection is open for research.</p>
+                  </accessrestrict>
                </c>
             </c>
          </c01>
@@ -149,6 +189,14 @@
                <head>Scope and Contents Note</head>
                <p>S and C test</p>
             </scopecontent>
+            <userestrict audience="external">
+               <head>Publication Rights</head>
+               <p>Materials in this collection may be protected by copyrights and other rights.  See <extref xlink:actuate="onRequest" xlink:href="http://www.library.unlv.edu/speccol/research_and_services/reproductions" xlink:show="new" xlink:title="Reproductions and Use"> Reproductions and Use</extref> on the UNLV Special Collections website for more information about reproductions and permissions to publish.</p>
+            </userestrict>
+            <accessrestrict audience="external">
+               <head>Access Note</head>
+               <p>Collection is open for research.</p>
+            </accessrestrict>
             <prefercite audience="external">
                <head>Preferred Citation</head>
                <p>Citation test</p>
@@ -181,6 +229,14 @@
                   <head>Scope and Contents Note</head>
                   <p>S and C test</p>
                </scopecontent>
+               <userestrict audience="external">
+                  <head>Publication Rights</head>
+                  <p>Materials in this collection may be protected by copyrights and other rights.  See <extref xlink:actuate="onRequest" xlink:href="http://www.library.unlv.edu/speccol/research_and_services/reproductions" xlink:show="new" xlink:title="Reproductions and Use"> Reproductions and Use</extref> on the UNLV Special Collections website for more information about reproductions and permissions to publish.</p>
+               </userestrict>
+               <accessrestrict audience="external">
+                  <head>Access Note</head>
+                  <p>TEST ACCESS</p>
+               </accessrestrict>
                <prefercite audience="external">
                   <head>Preferred Citation</head>
                   <p>Citation test</p>
@@ -215,6 +271,14 @@
                      </physdesc>
                      <container id="parent-id3" label="graphic_materials" type="roll">02</container>
                   </did>
+                  <userestrict audience="external">
+                     <head>Publication Rights</head>
+                     <p>TEST Restrict</p>
+                  </userestrict>
+                  <accessrestrict audience="external">
+                     <head>Access Note</head>
+                     <p>Collection is open for research.</p>
+                  </accessrestrict>
                </c>
                <c level="file">
                   <did>
@@ -222,6 +286,14 @@
                      <unitdate type="inclusive" normal="2005">2005</unitdate>
                      <container id="parent-id4" label="graphic_materials" type="roll">02</container>
                   </did>
+                  <userestrict audience="external">
+                     <head>Publication Rights</head>
+                     <p>TEST Restrict</p>
+                  </userestrict>
+                  <accessrestrict audience="external">
+                     <head>Access Note</head>
+                     <p>TEST ACCESS</p>
+                  </accessrestrict>
                </c>
             </c>
             <c level="subseries">
@@ -232,6 +304,14 @@
                   <head>Scope and Contents Note</head>
                   <p>S and C test</p>
                </scopecontent>
+               <userestrict audience="external">
+                  <head>Publication Rights</head>
+                  <p>Materials in this collection may be protected by copyrights and other rights.  See <extref xlink:actuate="onRequest" xlink:href="http://www.library.unlv.edu/speccol/research_and_services/reproductions" xlink:show="new" xlink:title="Reproductions and Use"> Reproductions and Use</extref> on the UNLV Special Collections website for more information about reproductions and permissions to publish.</p>
+               </userestrict>
+               <accessrestrict audience="external">
+                  <head>Access Note</head>
+                  <p>Collection is open for research.</p>
+               </accessrestrict>
                <prefercite audience="external">
                   <head>Preferred Citation</head>
                   <p>Citation test</p>
@@ -264,6 +344,14 @@
                      <head>Scope and Contents Note</head>
                      <p>S and C test</p>
                   </scopecontent>
+                  <userestrict audience="external">
+                     <head>Publication Rights</head>
+                     <p>Materials in this collection may be protected by copyrights and other rights.  See <extref xlink:actuate="onRequest" xlink:href="http://www.library.unlv.edu/speccol/research_and_services/reproductions" xlink:show="new" xlink:title="Reproductions and Use"> Reproductions and Use</extref> on the UNLV Special Collections website for more information about reproductions and permissions to publish.</p>
+                  </userestrict>
+                  <accessrestrict audience="external">
+                     <head>Access Note</head>
+                     <p>TEST ACCESS</p>
+                  </accessrestrict>
                   <prefercite audience="external">
                      <head>Preferred Citation</head>
                      <p>Citation test</p>
@@ -294,6 +382,14 @@
                         <unitdate type="single" normal="2004 June 30">2004 June 30</unitdate>
                         <container id="parent-id5" label="mixed_materials" type="oversized_box">03</container>
                      </did>
+                     <userestrict audience="external">
+                        <head>Publication Rights</head>
+                        <p>Materials in this collection may be protected by copyrights and other rights.  See <extref xlink:actuate="onRequest" xlink:href="http://www.library.unlv.edu/speccol/research_and_services/reproductions" xlink:show="new" xlink:title="Reproductions and Use"> Reproductions and Use</extref> on the UNLV Special Collections website for more information about reproductions and permissions to publish.</p>
+                     </userestrict>
+                     <accessrestrict audience="external">
+                        <head>Access Note</head>
+                        <p>Collection is open for research.</p>
+                     </accessrestrict>
                   </c>
                   <c level="file">
                      <did>
@@ -305,6 +401,14 @@
                         <head>Scope and Contents Note</head>
                         <p>S and C test</p>
                      </scopecontent>
+                     <userestrict audience="external">
+                        <head>Publication Rights</head>
+                        <p>Materials in this collection may be protected by copyrights and other rights.  See <extref xlink:actuate="onRequest" xlink:href="http://www.library.unlv.edu/speccol/research_and_services/reproductions" xlink:show="new" xlink:title="Reproductions and Use"> Reproductions and Use</extref> on the UNLV Special Collections website for more information about reproductions and permissions to publish.</p>
+                     </userestrict>
+                     <accessrestrict audience="external">
+                        <head>Access Note</head>
+                        <p>Collection is open for research.</p>
+                     </accessrestrict>
                      <prefercite audience="external">
                         <head>Preferred Citation</head>
                         <p>Citation test</p>
@@ -339,6 +443,14 @@
                      <head>Scope and Contents Note</head>
                      <p>S and C test</p>
                   </scopecontent>
+                  <userestrict audience="external">
+                     <head>Publication Rights</head>
+                     <p>Materials in this collection may be protected by copyrights and other rights.  See <extref xlink:actuate="onRequest" xlink:href="http://www.library.unlv.edu/speccol/research_and_services/reproductions" xlink:show="new" xlink:title="Reproductions and Use"> Reproductions and Use</extref> on the UNLV Special Collections website for more information about reproductions and permissions to publish.</p>
+                  </userestrict>
+                  <accessrestrict audience="external">
+                     <head>Access Note</head>
+                     <p>Collection is open for research.</p>
+                  </accessrestrict>
                   <prefercite audience="external">
                      <head>Preferred Citation</head>
                      <p>Citation test</p>
@@ -369,6 +481,14 @@
                         <unitdate type="single" normal="2004 June 30">2004 June 30</unitdate>
                         <container id="parent-id7" label="mixed_materials" type="oversized_box">03</container>
                      </did>
+                     <userestrict audience="external">
+                        <head>Publication Rights</head>
+                        <p>TEST Restrict</p>
+                     </userestrict>
+                     <accessrestrict audience="external">
+                        <head>Access Note</head>
+                        <p>Collection is open for research.</p>
+                     </accessrestrict>
                   </c>
                   <c level="file">
                      <did>
@@ -380,6 +500,14 @@
                         <head>Scope and Contents Note</head>
                         <p>S and C test</p>
                      </scopecontent>
+                     <userestrict audience="external">
+                        <head>Publication Rights</head>
+                        <p>Materials in this collection may be protected by copyrights and other rights.  See <extref xlink:actuate="onRequest" xlink:href="http://www.library.unlv.edu/speccol/research_and_services/reproductions" xlink:show="new" xlink:title="Reproductions and Use"> Reproductions and Use</extref> on the UNLV Special Collections website for more information about reproductions and permissions to publish.</p>
+                     </userestrict>
+                     <accessrestrict audience="external">
+                        <head>Access Note</head>
+                        <p>Collection is open for research.</p>
+                     </accessrestrict>
                      <prefercite audience="external">
                         <head>Preferred Citation</head>
                         <p>Citation test</p>
@@ -414,6 +542,14 @@
                            <head>Scope and Contents Note</head>
                            <p>S and C test</p>
                         </scopecontent>
+                        <userestrict audience="external">
+                           <head>Publication Rights</head>
+                           <p>Materials in this collection may be protected by copyrights and other rights.  See <extref xlink:actuate="onRequest" xlink:href="http://www.library.unlv.edu/speccol/research_and_services/reproductions" xlink:show="new" xlink:title="Reproductions and Use"> Reproductions and Use</extref> on the UNLV Special Collections website for more information about reproductions and permissions to publish.</p>
+                        </userestrict>
+                        <accessrestrict audience="external">
+                           <head>Access Note</head>
+                           <p>TEST ACCESS</p>
+                        </accessrestrict>
                         <prefercite audience="external">
                            <head>Preferred Citation</head>
                            <p>Citation test</p>
@@ -447,6 +583,14 @@
                      <unitdate type="single" normal="2004 June 30">2004 June 30</unitdate>
                      <container id="parent-id10" label="mixed_materials" type="oversized_box">03</container>
                   </did>
+                  <userestrict audience="external">
+                     <head>Publication Rights</head>
+                     <p>Materials in this collection may be protected by copyrights and other rights.  See <extref xlink:actuate="onRequest" xlink:href="http://www.library.unlv.edu/speccol/research_and_services/reproductions" xlink:show="new" xlink:title="Reproductions and Use"> Reproductions and Use</extref> on the UNLV Special Collections website for more information about reproductions and permissions to publish.</p>
+                  </userestrict>
+                  <accessrestrict audience="external">
+                     <head>Access Note</head>
+                     <p>Collection is open for research.</p>
+                  </accessrestrict>
                </c>
                <c level="file">
                   <did>
@@ -458,6 +602,14 @@
                      <head>Scope and Contents Note</head>
                      <p>S and C test</p>
                   </scopecontent>
+                  <userestrict audience="external">
+                     <head>Publication Rights</head>
+                     <p>TEST Restrict</p>
+                  </userestrict>
+                  <accessrestrict audience="external">
+                     <head>Access Note</head>
+                     <p>Collection is open for research.</p>
+                  </accessrestrict>
                   <prefercite audience="external">
                      <head>Preferred Citation</head>
                      <p>Citation test</p>
@@ -484,6 +636,49 @@
                   </relatedmaterial>
                </c>
             </c>
+         </c01>
+         <c01 level="file">
+            <did>
+               <unittitle>Top level file</unittitle>
+               <unitdate type="inclusive" normal="2005">2005</unitdate>
+               <container id="parent-id12" label="mixed_materials" type="oversized_box">03</container>
+            </did>
+            <scopecontent audience="external">
+               <head>Scope and Contents Note</head>
+               <p>S and C test</p>
+            </scopecontent>
+            <userestrict audience="external">
+               <head>Publication Rights</head>
+               <p>TEST Restrict</p>
+            </userestrict>
+            <accessrestrict audience="external">
+               <head>Access Note</head>
+               <p>Collection is open for research.</p>
+            </accessrestrict>
+            <prefercite audience="external">
+               <head>Preferred Citation</head>
+               <p>Citation test</p>
+            </prefercite>
+            <arrangement audience="external">
+               <head>Arrangement Note</head>
+               <p>Arrangement test</p>
+            </arrangement>
+            <acqinfo audience="external">
+               <head>Acquisition Note</head>
+               <p>Acq test</p>
+            </acqinfo>
+            <processinfo audience="external">
+               <head>Processing Note</head>
+               <p>Process test</p>
+            </processinfo>
+            <bioghist audience="external">
+               <head>Biographical Note</head>
+               <p>Bio test</p>
+            </bioghist>
+            <relatedmaterial audience="external">
+               <head>Related Materials</head>
+               <p>Related test</p>
+            </relatedmaterial>
          </c01>
       </dsc>
    </archdesc>

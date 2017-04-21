@@ -105,8 +105,8 @@
             <xsl:call-template name="notes">
                 <xsl:with-param name="generalnote" select="generalnote"/>
                 <xsl:with-param name="scopecontent" select="scopecontent"/>
-                <xsl:with-param name="accessrestrict" select="$accessrestrict_def"/>
-                <xsl:with-param name="userestrict" select="$userestrict_def"/>
+                <xsl:with-param name="accessrestrict" select="accessrestrict"/>
+                <xsl:with-param name="userestrict" select="userestrict"/>
                 <xsl:with-param name="prefercite" select="prefercite"/>
                 <xsl:with-param name="arrangement" select="arrangement"/>
                 <xsl:with-param name="acqinfo" select="acqinfo"/>
@@ -133,6 +133,7 @@
         <xsl:param name="processinfo" select="null"/>
         <xsl:param name="bioghist" select="null"/>
         <xsl:param name="relatedmaterial" select="null"/>
+        
         <xsl:if test="$generalnote != ''">
             <odd>
                 <xsl:attribute name="audience"><xsl:text>external</xsl:text></xsl:attribute>
@@ -148,21 +149,31 @@
             </scopecontent>
         </xsl:if>
         
-        <xsl:if test="$userestrict != ''">
-            <userestrict>
-                <xsl:attribute name="audience"><xsl:text>external</xsl:text></xsl:attribute>
-                <head>Publication Rights</head>
-                <p><xsl:value-of select="$userestrict" disable-output-escaping="yes"/></p>
-            </userestrict>
-        </xsl:if>
+        <userestrict>
+            <xsl:attribute name="audience"><xsl:text>external</xsl:text></xsl:attribute>
+            <head>Publication Rights</head>
+            <xsl:choose>
+               <xsl:when test="$userestrict != ''">
+                   <p><xsl:value-of select="$userestrict" disable-output-escaping="yes"/></p>
+               </xsl:when>
+               <xsl:otherwise>
+                 <p><xsl:value-of select="$userestrict_def" disable-output-escaping="yes"/></p>
+               </xsl:otherwise> 
+           </xsl:choose>
+        </userestrict>
         
-        <xsl:if test="$accessrestrict != ''">
-            <accessrestrict>
-                <xsl:attribute name="audience"><xsl:text>external</xsl:text></xsl:attribute>
-                <head>Access Note</head>
-                <p><xsl:value-of select="$accessrestrict" disable-output-escaping="yes"/></p>
-            </accessrestrict>
-        </xsl:if>
+        <accessrestrict>
+            <xsl:attribute name="audience"><xsl:text>external</xsl:text></xsl:attribute>
+            <head>Access Note</head>
+            <xsl:choose>
+                <xsl:when test="$accessrestrict != ''">
+                    <p><xsl:value-of select="$accessrestrict" disable-output-escaping="yes"/></p>
+                </xsl:when>
+                <xsl:otherwise>
+                    <p><xsl:value-of select="$accessrestrict_def" disable-output-escaping="yes"/></p>
+                </xsl:otherwise> 
+            </xsl:choose>
+        </accessrestrict>
         
         <xsl:if test="$prefercite != ''">
             <prefercite>
@@ -312,6 +323,8 @@
         <xsl:call-template name="notes">
             <xsl:with-param name="generalnote" select="generalnote"/>
             <xsl:with-param name="scopecontent" select="scopecontent"/>
+            <xsl:with-param name="accessrestrict" select="accessrestrict"/>
+            <xsl:with-param name="userestrict" select="userestrict"/>
             <xsl:with-param name="prefercite" select="prefercite"/>
             <xsl:with-param name="arrangement" select="arrangement"/>
             <xsl:with-param name="processinfo" select="processinfo"/>
