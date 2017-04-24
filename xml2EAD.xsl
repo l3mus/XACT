@@ -113,6 +113,7 @@
                 <xsl:with-param name="processinfo" select="processinfo"/>
                 <xsl:with-param name="bioghist" select="bioghist"/>
                 <xsl:with-param name="relatedmaterial" select="relatedmaterial"/>
+                <xsl:with-param name="component_level" select="false()"/>
             </xsl:call-template>
             
             <dsc>
@@ -133,6 +134,7 @@
         <xsl:param name="processinfo" select="null"/>
         <xsl:param name="bioghist" select="null"/>
         <xsl:param name="relatedmaterial" select="null"/>
+        <xsl:param name="component_level" select="null"/>
         
         <xsl:if test="$generalnote != ''">
             <odd>
@@ -149,31 +151,43 @@
             </scopecontent>
         </xsl:if>
         
-        <userestrict>
-            <xsl:attribute name="audience"><xsl:text>external</xsl:text></xsl:attribute>
-            <head>Publication Rights</head>
-            <xsl:choose>
-               <xsl:when test="$userestrict != ''">
-                   <p><xsl:value-of select="$userestrict" disable-output-escaping="yes"/></p>
-               </xsl:when>
-               <xsl:otherwise>
-                 <p><xsl:value-of select="$userestrict_def" disable-output-escaping="yes"/></p>
-               </xsl:otherwise> 
-           </xsl:choose>
-        </userestrict>
+        <xsl:choose>
+           <xsl:when test="$userestrict != ''">
+              <userestrict>
+                 <xsl:attribute name="audience"><xsl:text>external</xsl:text></xsl:attribute>
+                 <head>Publication Rights</head>
+                 <p><xsl:value-of select="$userestrict" disable-output-escaping="yes"/></p>
+              </userestrict>
+           </xsl:when>
+           <xsl:otherwise>
+              <xsl:if test="$component_level eq false()">
+                 <userestrict>
+                    <xsl:attribute name="audience"><xsl:text>external</xsl:text></xsl:attribute>
+                    <head>Publication Rights</head>
+                    <p><xsl:value-of select="$userestrict_def" disable-output-escaping="yes"/></p>
+                 </userestrict>
+              </xsl:if>
+          </xsl:otherwise> 
+          </xsl:choose>
         
-        <accessrestrict>
-            <xsl:attribute name="audience"><xsl:text>external</xsl:text></xsl:attribute>
-            <head>Access Note</head>
-            <xsl:choose>
-                <xsl:when test="$accessrestrict != ''">
+          <xsl:choose>
+              <xsl:when test="$accessrestrict != ''">
+                 <accessrestrict>
+                    <xsl:attribute name="audience"><xsl:text>external</xsl:text></xsl:attribute>
+                    <head>Access Note</head>
                     <p><xsl:value-of select="$accessrestrict" disable-output-escaping="yes"/></p>
-                </xsl:when>
-                <xsl:otherwise>
-                    <p><xsl:value-of select="$accessrestrict_def" disable-output-escaping="yes"/></p>
-                </xsl:otherwise> 
-            </xsl:choose>
-        </accessrestrict>
+                 </accessrestrict>
+              </xsl:when>
+              <xsl:otherwise>
+                 <xsl:if test="$component_level eq false()">
+                    <accessrestrict>
+                       <xsl:attribute name="audience"><xsl:text>external</xsl:text></xsl:attribute>
+                       <head>Access Note</head>
+                       <p><xsl:value-of select="$accessrestrict_def" disable-output-escaping="yes"/></p>
+                    </accessrestrict>
+                 </xsl:if>
+              </xsl:otherwise> 
+          </xsl:choose>
         
         <xsl:if test="$prefercite != ''">
             <prefercite>
@@ -331,6 +345,7 @@
             <xsl:with-param name="bioghist" select="bioghist"/>
             <xsl:with-param name="relatedmaterial" select="relatedmaterial"/>
             <xsl:with-param name="acqinfo" select="acqinfo"/>
+            <xsl:with-param name="component_level" select="true()"/>
         </xsl:call-template>
     </xsl:template>
     
